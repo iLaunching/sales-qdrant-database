@@ -14,21 +14,22 @@ Stores and searches sales content using AI embeddings:
 ## Deploy to Railway
 
 ```bash
-# Push to GitHub
-git init
-git add .
-git commit -m "Add Qdrant service"
-git remote add origin https://github.com/iLaunching/qdrant-service.git
-git push -u origin main
-
 # In Railway dashboard:
 1. Click "+ New"
 2. Select "GitHub Repo"
-3. Choose "qdrant-service"
+3. Choose "sales-qdrant-database"
 4. Deploy
 
+# Add Railway Volume for data persistence:
+1. Go to your Qdrant service
+2. Click "Variables" tab
+3. Click "Volumes" section
+4. Click "+ Add Volume"
+5. Mount Path: /qdrant/storage
+6. Size: 1GB (or more as needed)
+
 # Get the URL
-Railway provides: https://qdrant-service-production-XXXX.up.railway.app
+Railway provides: https://sales-qdrant-database-production-XXXX.up.railway.app
 ```
 
 ## Configure Sales API
